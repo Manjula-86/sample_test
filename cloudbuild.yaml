@@ -1,4 +1,14 @@
 steps:
+- id: "get build number"
+    name: gcr.io/cloud-builders/git
+    dir: 'sireesh'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        git rev-parse --short HEAD > _BUILDNUMBER
+    waitFor: ['-']
+    
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args: ['./submit.sh','--DataflowPipeline']
