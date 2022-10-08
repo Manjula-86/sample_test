@@ -12,3 +12,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: 'bash'
   args: ['./submit.sh','--DataflowPipeline']
+  
+  
+  
+  waitFor: ['get build number']
