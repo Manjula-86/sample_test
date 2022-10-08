@@ -1,7 +1,7 @@
 steps:
   - id: "get build number"
     name: gcr.io/cloud-builders/git
-    dir: 'cloudbuild-dataflow-demo/streaming'
+    dir: 'sireesh/streaming'
     entrypoint: 'bash'
     args:
       - '-c'
@@ -11,7 +11,7 @@ steps:
 
   - id: "build and submit the dataflow job"
     name: maven:3.6.0-jdk-11-slim
-    dir: 'cloudbuild-dataflow-demo/streaming'
+    dir: 'sireesh/streaming'
     entrypoint: 'bash'
     args:
       - '-c'
