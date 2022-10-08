@@ -9,10 +9,9 @@ steps:
         git rev-parse --short HEAD > _BUILDNUMBER
     waitFor: ['-']
     
-- name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: 'bash'
-  args: ['./submit.sh','--DataflowPipeline']
-  
-  
-  
-  waitFor: ['get build number']
+ - id: "build and submit the dataflow job"
+    name: maven:3.6.0-jdk-11-slim
+    dir: 'sireesh'
+    entrypoint: 'bash'
+    args: ['./submit.sh','--DataflowPipeline']
+    waitFor: ['get build number']
