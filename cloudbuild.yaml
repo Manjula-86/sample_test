@@ -13,5 +13,6 @@ steps:
     name: maven:3.6.0-jdk-11-slim
     dir: 'sireesh'
     entrypoint: 'bash'
-    args: ['./submit.sh','--DataflowPipeline']
+    #args: ['./submit.sh','--DataflowPipeline']
+    args: ['./myshell.sh']
     waitFor: ['get build number']
