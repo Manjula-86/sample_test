@@ -9,7 +9,6 @@ steps:
         git rev-parse --short HEAD > _BUILDNUMBER
     waitFor: ['-']
 
-  - id: "build and submit the dataflow job"
   - name: 'gcr.io/cloud-builders/gcloud'
     entrypoint: 'bash'
     args: ['./myshell.sh']
