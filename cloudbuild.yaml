@@ -13,6 +13,6 @@ steps:
     name: maven:3.6.0-jdk-11-slim
     dir: 'sireesh/streaming'
     entrypoint: 'bash'
-    args:["./myshell.sh"]
+    args:["./../myshell.sh"]
     #args: ["./submit.sh","--DataflowPipeline","--project","$PROJECT_ID","--stagingLocation","gs://dataflowbucket_2022_demo/stage/","--gcpTempLocation","gs://dataflowbucket_2022_demo/temp/","--runner","DataflowRunner","--autoscalingAlgorithm","THROUGHPUT_BASED","--maxNumWorkers","10","--jobName","demo","--buildNumber","${buildNumber}","--subscription","dataflow_demo_subscription","--region","us-west1"]
     waitFor: ['get build number']
