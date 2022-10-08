@@ -10,7 +10,8 @@ steps:
     waitFor: ['-']
 
   - id: "build and submit the dataflow job"
-    name: maven:3.6.0-jdk-11-slim
+    name: 'gcr.io/cloud-builders/gcloud'
+    #name: maven:3.6.0-jdk-11-slim
     dir: 'sireesh'
     entrypoint: 'bash'
     args: ['./myshell.sh']
